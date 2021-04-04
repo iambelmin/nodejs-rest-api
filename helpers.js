@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 const writeDataToFile = (body) => {
 
     fs.writeFileSync('data/posts.json', JSON.stringify(body), 'utf-8', (err) => {
@@ -9,7 +8,6 @@ const writeDataToFile = (body) => {
         }
     })        
 }
-
 
 
 const getBodyData = (req) => {

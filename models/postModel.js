@@ -24,8 +24,27 @@ const create = (post) => {
     });
 };
 
+const update = (post, id) => {
+    return new Promise((resolve, reject) => {
+        const index = posts.findIndex((p) => p.id == id);
+        posts[index] = {id, ...post};
+        writeDataToFile(posts);
+        resolve(posts[index]);
+    });
+}
+
+const deletePost = (id) => {
+    return new Promise((resolve, reject) => {
+        const deleted = posts.filter((p) => p.id != id);
+        writeDataToFile(deleted);
+        resolve(deleted);
+    });
+}
+
 module.exports = {
     findAll,
     findById,
-    create
+    create,
+    update,
+    deletePost
 }
