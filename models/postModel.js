@@ -41,6 +41,7 @@ const deletePost = (id) => {
     });
 }
 
+
 module.exports = {
     findAll,
     findById,
